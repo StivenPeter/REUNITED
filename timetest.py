@@ -16,19 +16,17 @@ def name(f):
     
 @name
 def fib2(n):
-    def fibH(n):
-        if n<=1:
-            return 1
-        else:
-            return fibH(n-1)+fibH(n-2)
-    return fibH(n)
+    if n<=1:
+        return 1
+    else:
+        return fib2(n-1)+fib2(n-2)
 
 @timetest
 def fib(n):
     if n<=1:
         return 1
     else:
-        return fib2(n-1)+fib2(n-2)
+        return fib(n-1)+fib(n-2)
 
 print fib(10)
 print fib2(5)
